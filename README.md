@@ -1,151 +1,79 @@
-# 📲 Disparo WhatsApp
+<div align="center">
+  <img src="assets/logoAprenser.png" alt="Aprenser Logo" width="180" onerror="this.src='https://via.placeholder.com/180x60?text=Aprenser'">
+  <h1>🎓 Projeto Aprenser</h1>
+  <p><strong>Landing Page de uma Escola de Tecnologia Online</strong></p>
 
-Bot para envio automático e agendado de mensagens em grupos do WhatsApp.
-
-Ideal para divulgação de imóveis, vagas ou anúncios recorrentes em múltiplos grupos de uma só vez.
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Node.js-18%2B-339933?logo=nodedotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/WhatsApp-Bot-25D366?logo=whatsapp&logoColor=white" />
-  <img src="https://img.shields.io/badge/Agendamento-Cron-blue?logo=clockify&logoColor=white" />
-  <img src="https://img.shields.io/badge/License-MIT-yellow" />
-</p>
-
----
-
-## ✨ Funcionalidades
-
-| Feature | Descrição |
-|---|---|
-| 📨 **Disparo em massa** | Envia para múltiplos grupos automaticamente |
-| 🕒 **Agendamento** | Configura horários de envio diário com cron |
-| 🚀 **Disparo inicial** | Envia imediatamente ao iniciar o script |
-| 🔐 **Sessão persistente** | Escaneia o QR Code apenas na primeira vez |
-| 🔄 **Reconexão automática** | Reconecta sozinho se a conexão cair |
-| 🧠 **Busca inteligente** | Sugere nomes similares caso não encontre um grupo |
-| ⏱️ **Anti-spam** | Pausa aleatória entre envios (5–8s) |
+  <p>
+    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+    <img src="https://img.shields.io/badge/Design-Responsivo-40B5A4?style=for-the-badge" alt="Responsivo" />
+  </p>
+</div>
 
 ---
 
-## 📋 Pré-requisitos
+## 📖 Sobre o Projeto
 
-- [Node.js](https://nodejs.org/) v18 ou superior
-- Uma conta de WhatsApp ativa
-- Navegador Chromium (instalado automaticamente pelo Puppeteer)
+O **Aprenser** é uma *Landing Page* desenvolvida para uma escola de tecnologia fictícia. O foco deste projeto é apresentar os principais cursos oferecidos, um pouco sobre a visão da escola e as informações de contato com integração ao Google Maps. 
+
+Este projeto foi construído focando na semântica do HTML5 e na estilização puramente em CSS (Vanilla CSS), seguindo boas práticas de organização e design para web.
 
 ---
 
-## 🚀 Instalação
+## ✨ Estrutura e Seções
 
-```bash
-# Clone o repositório
-git clone https://github.com/KevinLopes23/disparo-whats.git
-cd disparo-whats
+A página é dividida nas seguintes sessões principais:
 
-# Instale as dependências
-npm install
+- **Hero Banner:** Uma seção de destaque inicial com uma mensagem de impacto (*"O saber é o que transforma nosso ser"*).
+- **Cursos:** Apresentação em formato de *cards* dos três principais cursos oferecidos (Design para Web, Front End Developer e Back End Developer).
+- **Nossa Escola:** Uma breve seção institucional com informações sobre a metodologia, foco no suporte aos alunos e objetivo de prepará-los para o sucesso.
+- **Contatos:** Integração interativa com mapa (via iFrame do Google Maps) e endereço/informações de comunicação.
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+O projeto foi construído usando tecnologias fundamentais da web:
+
+* **HTML5:** Estrutura semântica (`<header>`, `<nav>`, `<section>`, `<article>`, `<footer>`).
+* **CSS3:** Estilização usando classes BEM-like ou nomenclatura limpa para fácil manutenção.
+* **Normalize.css:** Para garantir a renderização consistente e reset de estilos padrão entre todos os navegadores.
+* **Google Fonts:** Utilização da tipografia **Inter** para um design moderno, legível e *clean*.
+
+---
+
+## 📁 Estrutura de Arquivos
+
+```text
+Aprenser/
+├── css/
+│   ├── estilo.css        # Folha de estilos principal
+│   └── normalize.css     # Reset de CSS para uniformidade
+├── imagens/              # Diretório contendo as imagens, ícones e logo
+├── assets/               # Outros assets do projeto
+├── index.html            # Arquivo principal da Landing Page
+├── conteudo.txt          # Documento rascunho com os copys da página
+└── README.md             # Esta documentação
 ```
 
 ---
 
-## ⚙️ Configuração
+## 💻 Como visualizar o projeto
 
-Edite o arquivo **`config.js`** para personalizar:
+Como é um projeto puramente estático, você não precisa instalar nenhuma dependência ou banco de dados.
 
-```js
-module.exports = {
-    // Nomes EXATOS dos grupos (como aparecem no WhatsApp)
-    groups: [
-        'Meu Grupo 1',
-        'Meu Grupo 2',
-    ],
-
-    // Mensagem a ser enviada (use *negrito* e _itálico_)
-    message: `Sua mensagem aqui...`,
-
-    // Horários de envio (formato 24h)
-    schedule: [9, 18],         // 09:00 e 18:00
-
-    // Enviar imediatamente ao iniciar?
-    sendOnStartup: true,
-
-    // Delay de sincronização (ms)
-    syncDelayMs: 15000,
-};
-```
-
-> **💡 Dica:** O nome do grupo precisa ser **exatamente** igual ao que aparece no seu WhatsApp, incluindo emojis e caracteres especiais.
-
----
-
-## ▶️ Como Usar
-
-```bash
-npm start
-```
-
-### Primeiro uso
-
-1. Um **QR Code** aparecerá no terminal.
-2. Abra o WhatsApp no celular → **Aparelhos Conectados** → **Conectar um aparelho**.
-3. Escaneie o QR Code.
-4. Pronto! O bot começará a enviar.
-
-### Próximas vezes
-
-A sessão é salva automaticamente. Basta rodar `npm start` e o bot conecta direto, sem QR Code.
-
----
-
-## 📁 Estrutura do Projeto
-
-```
-disparo-whats/
-├── index.js          # Lógica principal do bot
-├── config.js         # Configuração (grupos, mensagem, horários)
-├── package.json      # Dependências e scripts
-├── .gitignore        # Arquivos ignorados pelo Git
-└── README.md         # Documentação
-```
-
----
-
-## 🛠️ Tecnologias
-
-| Pacote | Função |
-|---|---|
-| [`whatsapp-web.js`](https://github.com/pedroslopez/whatsapp-web.js) | Controle do WhatsApp Web via Puppeteer |
-| [`qrcode-terminal`](https://www.npmjs.com/package/qrcode-terminal) | Exibição do QR Code no terminal |
-| [`node-cron`](https://www.npmjs.com/package/node-cron) | Agendamento de tarefas (cron jobs) |
-
----
-
-## ⚠️ Avisos Importantes
-
-- **Não é uma API oficial.** Este bot simula o WhatsApp Web. Use com responsabilidade.
-- **Risco de banimento.** O envio excessivo de mensagens pode resultar em bloqueio da conta pelo WhatsApp. O bot já inclui pausas anti-spam, mas use com moderação.
-- **Mantenha o terminal aberto.** O bot só funciona enquanto o processo estiver rodando.
-- **Não compartilhe** a pasta `.wwebjs_auth/` — ela contém sua sessão do WhatsApp.
-
----
-
-## 🐛 Solução de Problemas
-
-| Problema | Solução |
-|---|---|
-| QR Code aparece repetidamente | Delete a pasta `.wwebjs_auth/` e tente novamente |
-| Grupo não encontrado | Verifique se o nome no `config.js` é **exatamente** igual ao do WhatsApp |
-| Erro `r: r` no getChats | Bug conhecido da lib — o bot já usa acesso direto ao store para evitar isso |
-| Timeout do Puppeteer | O bot já configura 5min de timeout. Se persistir, aumente `protocolTimeout` no `index.js` |
-
----
-
-## 📄 Licença
-
-Este projeto está sob a licença [MIT](LICENSE).
+1. Faça o clone deste repositório:
+   ```bash
+   git clone https://github.com/SeuUsuario/Aprenser.git
+   ```
+2. Entre na pasta do projeto:
+   ```bash
+   cd ats-reverso/Aprenser
+   ```
+3. Abra o arquivo `index.html` diretamente em qualquer navegador moderno (Chrome, Firefox, Edge, Safari), ou use a extensão **Live Server** no VS Code para iniciar um servidor local e ter *hot-reload*.
 
 ---
 
 <p align="center">
-  Feito com ☕ e Node.js
+  Desenvolvido por <b>Serliv</b> e adaptado/estudado por <b>Kevin</b> ☕
 </p>
