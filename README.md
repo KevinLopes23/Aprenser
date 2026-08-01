@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="assets/logoAprenser.png" alt="Aprenser Logo" width="180" onerror="this.src='https://via.placeholder.com/180x60?text=Aprenser'">
   <h1>🎓 Projeto Aprenser</h1>
   <p><strong>Landing Page de uma Escola de Tecnologia Online</strong></p>
 
@@ -64,11 +63,11 @@ Como é um projeto puramente estático, você não precisa instalar nenhuma depe
 
 1. Faça o clone deste repositório:
    ```bash
-   git clone https://github.com/SeuUsuario/Aprenser.git
+   git clone https://github.com/KevinLopes23/Aprenser.git
    ```
 2. Entre na pasta do projeto:
    ```bash
-   cd ats-reverso/Aprenser
+   cd Aprenser
    ```
 3. Abra o arquivo `index.html` diretamente em qualquer navegador moderno (Chrome, Firefox, Edge, Safari), ou use a extensão **Live Server** no VS Code para iniciar um servidor local e ter *hot-reload*.
 
